@@ -1,0 +1,246 @@
+:root {
+    --light-color: #e5e6e7;
+    --primary-color: #222222;
+    --secondary-color: #009688;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: var(--primary-color);
+}
+.container .row{
+    width: 85%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.column{
+    flex: 1 1 45%; /* Takes up 45% width with flexibility*/
+    padding: 20px;
+}
+
+.hero {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.8),
+            rgba(0, 0, 0, 0.5)), url(../images/home-bg.webp);
+    background-size: cover;
+    background-position: center;
+
+}
+
+/* Style for nav bar */
+.nav-bar {
+    width: 85%;
+    margin: auto;
+    padding: 35px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+    /* background-color: red; */
+}
+
+.site-title {
+    color: var(--light-color);
+    cursor: pointer;
+}
+
+.nav-bar ul li {
+    list-style: none;
+    font-weight: 500;
+    font-size: 15px;
+    display: inline-block;
+    margin: 0px 20px;
+    position: relative;
+}
+
+.nav-bar ul li a {
+    color: var(--light-color);
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.nav-bar ul li::after {
+    content: "";
+    height: 3px;
+    width: 0%;
+    background: var(--secondary-color);
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+
+}
+
+.nav-bar ul li:hover::after {
+    width: 100%;
+
+}
+
+.fa-bars {
+    color: var(--light-color);
+}
+
+.menu-icon {
+    display: none;
+}
+/* contact form styling */
+.contact-form form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Add responsive styles for the navigation bar */
+@media(max-width:769px) {
+    .menu-icon {
+        display: block;
+    }
+
+    .nav-bar {
+        position: relative;
+
+    }
+
+    .nav-bar ul {
+        flex-direction: column;
+        position: absolute;
+        background: var(--secondary-color);
+        line-height: 30px;
+        top: 90px;
+        right: 38px;
+        padding: 20px;
+        transition: 0.5s;
+        border-radius: 5px;
+
+    }
+    .content h1{
+        font-size: 35px;
+    }
+    .container .row{
+        flex-direction: column;
+        align-items: center;
+    }
+    .responsive-image{
+        max-width: 80%;
+        margin-bottom: 20px;
+    }
+    .column
+    {
+        flex: 1 1 100%;
+    }
+    .container .row{
+        flex-direction: column;
+        align-items: center;
+
+    }
+    
+
+}
+
+.content {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: var(--light-color);
+}
+
+.content h1 {
+    font-size: 50px;
+    margin-top: 80px;
+}
+
+.content p {
+    margin: 20px auto;
+    font-weight: 100;
+    line-height: 35px;
+}
+
+button {
+    width: 200px;
+    padding: 15px 0px;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid var(--secondary-color);
+    background-color: transparent;
+    color: var(--light-color);
+    cursor: pointer;
+    position: relative;
+}
+span{
+    background-color: var(--secondary-color);
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+
+
+}
+button:hover span{
+    width: 100%;
+}
+
+/* style for about us section */
+.about-img{
+    flex: 1;
+}
+
+.responsive-image{
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+.about-content{
+    flex: 2;
+    color: var(--light-color);
+}
+/* style for gallery */
+.heading{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--light-color);
+    text-transform: uppercase;
+    padding: 20px 0px;
+}
+
+.about-content h4{
+    text-align: left;
+}
+.row-image{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+
+}
+.row-image img{
+    margin: 10px;
+    width: 100px;
+    flex: 1;
+    border-radius: 5px;
+
+}
+.row-image img:hover{
+    box-shadow:  0 8px 16px 0 rgba(0, 0, 0, 0.9);
+}
